@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="클레임 센터 스튜디오 파일럿 오픈을 위한 우선순위별 실행 대시보드"
+    />
+    <meta name="theme-color" content="#0a1020" />
+    <title>클레임 센터 스튜디오 | 파일럿 오픈 TODO</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#task-board">할 일 목록으로 바로가기</a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="#top" aria-label="페이지 상단으로 이동">
+          <span class="brand-mark" aria-hidden="true">C</span>
+          <span>
+            <strong>CLAIM CENTER</strong>
+            <small>STUDIO LAUNCH BOARD</small>
+          </span>
+        </a>
+        <nav class="header-actions" aria-label="페이지 도구">
+          <span class="save-status" id="save-status">개인 체크 자동 저장</span>
+          <button class="button button-ghost" type="button" id="print-button">인쇄 · PDF</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-grid shell">
+          <div class="hero-copy">
+            <div class="eyebrow"><span></span> 2026.08.25 회의 실행안</div>
+            <h1>월요일 파일럿 오픈을 위한<br /><em>실행 우선순위</em></h1>
+            <p>
+              기능을 더 붙이기보다, 완료 프로젝트 1건이 의뢰부터 납품까지 끊김 없이
+              돌아가도록 만드는 것이 이번 주의 단일 목표입니다.
+            </p>
+            <div class="hero-tags" aria-label="핵심 운영 원칙">
+              <span>오픈일 08.31</span>
+              <span>실무자 파일럿</span>
+              <span>MVP 범위 동결</span>
+            </div>
+          </div>
+
+          <aside class="launch-card" aria-label="파일럿 오픈 현황">
+            <div class="launch-card-top">
+              <span>파일럿 오픈까지</span>
+              <strong id="countdown">D-6</strong>
+            </div>
+            <div class="progress-label">
+              <span>전체 진행률</span>
+              <b id="progress-percent">0%</b>
+            </div>
+            <div class="progress-track" aria-hidden="true">
+              <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <div class="launch-stats">
+              <div><strong id="completed-count">0</strong><span>완료</span></div>
+              <div><strong id="remaining-count">0</strong><span>남음</span></div>
+              <div><strong id="critical-count">0</strong><span>오픈 전 필수</span></div>
+            </div>
+            <p>체크 상태는 현재 브라우저에 자동 저장됩니다.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="shell overview" aria-label="오픈 전략 요약">
+        <article class="decision-card decision-primary">
+          <span class="card-kicker">이번 주 결론</span>
+          <h2>정식 오픈이 아닌<br />제한된 파일럿 오픈</h2>
+          <p>최 본부장·임경호 센터장·장 실장·관리자 중심으로 먼저 사용합니다.</p>
+        </article>
+        <article class="decision-card">
+          <span class="card-number">01</span>
+          <h3>범위 동결</h3>
+          <p>의뢰부터 최종 자료 저장까지의 핵심 업무 흐름만 완성합니다.</p>
+        </article>
+        <article class="decision-card">
+          <span class="card-number">02</span>
+          <h3>원사이클 검증</h3>
+          <p>완료 프로젝트 1건을 선정해 처음부터 끝까지 실제로 통과시킵니다.</p>
+        </article>
+        <article class="decision-card">
+          <span class="card-number">03</span>
+          <h3>오류 우선</h3>
+          <p>신규 편의기능보다 단계 연결, 저장, 권한, AI 생성 오류를 먼저 잡습니다.</p>
+        </article>
+      </section>
+
+      <section class="shell gates" aria-labelledby="gate-title">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">GO / NO-GO</span>
+            <h2 id="gate-title">월요일 오픈을 결정하는 3개 관문</h2>
+          </div>
+          <p>하나라도 막히면 전체 오픈 대신 테스트 계정만 유지합니다.</p>
+        </div>
+        <div class="gate-grid">
+          <article>
+            <span class="gate-icon" aria-hidden="true">01</span>
+            <div><h3>회사 계정·API 준비</h3><p>Google Drive와 유료 AI API가 실제 환경에서 연결돼야 합니다.</p></div>
+          </article>
+          <article>
+            <span class="gate-icon" aria-hidden="true">02</span>
+            <div><h3>핵심 오류 제거</h3><p>단계 이동, 일정 연동, 자료 저장과 AI 초안 생성이 정상이어야 합니다.</p></div>
+          </article>
+          <article>
+            <span class="gate-icon" aria-hidden="true">03</span>
+            <div><h3>완료 프로젝트 통과</h3><p>프로젝트 한 건이 의뢰부터 납품까지 중단 없이 완료돼야 합니다.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="shell workflow" aria-labelledby="workflow-title">
+        <div class="section-heading compact">
+          <div>
+            <span class="section-kicker">CORE WORKFLOW</span>
+            <h2 id="workflow-title">1차 오픈 업무 흐름</h2>
+          </div>
+        </div>
+        <ol class="workflow-list">
+          <li><span>01</span><b>의뢰 접수</b></li>
+          <li><span>02</span><b>제안서 작성·검토</b></li>
+          <li><span>03</span><b>수주 확정</b></li>
+          <li><span>04</span><b>PM·일정 설정</b></li>
+          <li><span>05</span><b>자료·회의록 관리</b></li>
+          <li><span>06</span><b>보고서 작성·승인</b></li>
+          <li><span>07</span><b>납품·성과 관리</b></li>
+        </ol>
+      </section>
+
+      <section class="board-section" id="task-board" aria-labelledby="board-title">
+        <div class="shell">
+          <div class="section-heading board-heading">
+            <div>
+              <span class="section-kicker">ACTION BOARD</span>
+              <h2 id="board-title">우선순위별 TODO</h2>
+            </div>
+            <button class="button button-reset" id="reset-button" type="button">내 체크 초기화</button>
+          </div>
+
+          <div class="toolbar" aria-label="할 일 필터">
+            <label class="search-box">
+              <span class="sr-only">할 일 검색</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.3-4.3m2.3-5.2a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" /></svg>
+              <input id="search-input" type="search" placeholder="업무·담당자 검색" autocomplete="off" />
+            </label>
+            <div class="filter-group" role="group" aria-label="우선순위 선택">
+              <button class="filter-button is-active" type="button" data-filter="all">전체</button>
+              <button class="filter-button" type="button" data-filter="P0">P0 오늘</button>
+              <button class="filter-button" type="button" data-filter="P1">P1 오픈 전</button>
+              <button class="filter-button" type="button" data-filter="P2">P2 이후</button>
+            </div>
+            <label class="hide-completed">
+              <input type="checkbox" id="hide-completed" />
+              <span>완료 숨기기</span>
+            </label>
+          </div>
+
+          <div id="task-groups" class="task-groups" aria-live="polite"></div>
+          <div class="empty-state" id="empty-state" hidden>
+            <strong>조건에 맞는 업무가 없습니다.</strong>
+            <span>검색어 또는 필터를 변경해 주세요.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell owner-section" aria-labelledby="owner-title">
+        <div class="section-heading compact">
+          <div>
+            <span class="section-kicker">OWNER MAP</span>
+            <h2 id="owner-title">담당자별 즉시 요청사항</h2>
+          </div>
+        </div>
+        <div class="owner-table-wrap">
+          <table>
+            <thead><tr><th>대상</th><th>바로 요청할 내용</th><th>기준일</th></tr></thead>
+            <tbody>
+              <tr><td><strong>최 본부장 · 임경호 센터장</strong></td><td>필수 입력항목, 불필요 항목, 프로젝트 유형과 제안서 템플릿 확정</td><td><span class="date-badge urgent">08.26</span></td></tr>
+              <tr><td><strong>장 실장</strong></td><td>실제 PM 업무 흐름과 검토·수정 과정 검증</td><td><span class="date-badge">08.27</span></td></tr>
+              <tr><td><strong>관리자 · 개발</strong></td><td>완료 프로젝트 원사이클 테스트와 치명적 오류 수정</td><td><span class="date-badge">08.28</span></td></tr>
+              <tr><td><strong>경영지원 · 상무</strong></td><td>Google 계정, 회사 카드, AI API 결제, 전체 구독비용 정리</td><td><span class="date-badge urgent">오늘</span></td></tr>
+              <tr><td><strong>서버 담당</strong></td><td>파일럿의 Cloudflare 유지와 이후 베트남 서버 통합 가능성 검토</td><td><span class="date-badge">08.28</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="after-launch" aria-labelledby="after-title">
+        <div class="shell after-grid">
+          <div>
+            <span class="section-kicker light">AFTER PILOT</span>
+            <h2 id="after-title">파일럿 이후 고도화 원칙</h2>
+          </div>
+          <p>
+            HWP·Word 직접 편집, 메일 회신 추적, 보고서 자동화, 법원 연동은 실제 사용
+            피드백과 데이터가 쌓인 뒤 순차 개발합니다. 이번 주 오픈을 지연시키지 않습니다.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer-inner">
+        <span>Claim Center Studio · Pilot Launch Board</span>
+        <span>회의 기준 2026.08.25 · 파일럿 목표 2026.08.31</span>
+      </div>
+    </footer>
+  </body>
+</html>
